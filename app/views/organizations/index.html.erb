@@ -8,6 +8,9 @@
       <th>
         Name
       </th>
+      <th>
+        People
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +18,11 @@
       <tr>
         <td>
           <%= link_to organization.name, organization_path(organization) %>
+        </td>
+        <td>
+          <% organization.people.each do |person| %>
+            <%= link_to person.name, person_path(person) %> &nbsp;
+          <% end %>
         </td>
       </tr>
     <% end %>
